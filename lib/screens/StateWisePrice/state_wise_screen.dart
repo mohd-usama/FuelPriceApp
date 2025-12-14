@@ -31,7 +31,7 @@ class _StateWiseScreenState extends State<StateWiseScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("State Wise Price"),
+        title: const Text("State Wise Price"),
       ),
       body: Consumer<StateWiseProvider>(builder: (context, provider, child) {
         return Padding(
@@ -39,7 +39,7 @@ class _StateWiseScreenState extends State<StateWiseScreen> {
           child: ListView(
             children: [
               Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.white,
@@ -47,8 +47,8 @@ class _StateWiseScreenState extends State<StateWiseScreen> {
                 ),
                 child: Column(
                   children: [
-                    Text("Select State",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
-                    SizedBox(height: 10),
+                    const Text("Select State",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
+                    const SizedBox(height: 10),
 
                     CustomWidgets.customDropDown(
                         selectedState: provider.selectedOrigin,
@@ -56,19 +56,19 @@ class _StateWiseScreenState extends State<StateWiseScreen> {
                         onChanged: (String? v) {
                           provider.setOriginValue(v);
                         },
-                        hint: Text("Origin")),
-                    SizedBox(height: 10),
+                        hint: const Text("Origin")),
+                    const SizedBox(height: 10),
                     CustomWidgets.customDropDown(
                         selectedState: provider.selectedDestination,
                         list: provider.destinationList,
                         onChanged: (String? v) {
                           provider.setDestinationValue(v);
                         },
-                        hint: Text("Destination")),
+                        hint: const Text("Destination")),
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Row(
                 children: [
                   Expanded(
@@ -76,7 +76,7 @@ class _StateWiseScreenState extends State<StateWiseScreen> {
                       width: MediaQuery.of(context).size.width,
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            shape: StadiumBorder(),
+                            shape: const StadiumBorder(),
                             backgroundColor: Colors.white,
                           ),
                           onPressed: () {
@@ -85,19 +85,19 @@ class _StateWiseScreenState extends State<StateWiseScreen> {
                             }
 
                           },
-                          child: Text(
+                          child: const Text(
                             "Get Price",
                             style: TextStyle(color: Colors.teal),
                           )),
                     ),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Expanded(
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width,
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            shape: StadiumBorder(),
+                            shape: const StadiumBorder(),
                             backgroundColor: Colors.white,
                           ),
                           onPressed: () {
@@ -111,7 +111,7 @@ class _StateWiseScreenState extends State<StateWiseScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               if (provider.enableMap == true)
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
@@ -146,12 +146,12 @@ class _StateWiseScreenState extends State<StateWiseScreen> {
                     ),
                   ),
                 ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               if (provider.selectedOriginFuelData != null && provider.enableMap == true)
                 Align(
                     alignment: Alignment.bottomCenter,
                     child: CustomWidgets().priceBottomSheetContent(provider.selectedOriginFuelData!, showDragButton: false)),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               if (provider.selectDestinationFuelData != null && provider.enableMap == true)
                 Align(
                     alignment: Alignment.bottomCenter,

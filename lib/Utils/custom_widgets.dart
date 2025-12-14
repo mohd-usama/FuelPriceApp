@@ -52,7 +52,7 @@ class CustomWidgets {
             Text("${title} : "),
             Text(
               value,
-              style: TextStyle(fontWeight: FontWeight.w500),
+              style: const TextStyle(fontWeight: FontWeight.w500),
             ),
           ],
         ));
@@ -81,11 +81,11 @@ class CustomWidgets {
                   children: [
                     Text(
                       " $title",
-                      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+                      style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
                     ),
                     Text(
                       value,
-                      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+                      style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
                     ),
                   ],
                 ),
@@ -102,7 +102,7 @@ class CustomWidgets {
     Widget? hint,
   }) {
     return Container(
-      padding: EdgeInsets.only(left: 10,right: 10),
+      padding: const EdgeInsets.only(left: 10,right: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: Colors.white,
